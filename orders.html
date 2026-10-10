@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orders – EcoLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="orders">
+<div id="site-header"></div>
+<main class="container orders-layout">
+  <section>
+    <div class="orders-hero"><div class="banner-img" id="ship-banner"></div><h2 id="banner-title">Your order is on its way.</h2></div>
+    <div class="panel" style="margin-top:24px">
+      <div class="tabs">
+        <button class="tab on">All Orders</button><button class="tab">Active</button><button class="tab">Delivered</button><button class="tab">Cancelled</button>
+        <div class="searchbar">🔍 <input id="oq" type="search" placeholder="Search orders…" aria-label="Search orders"></div>
+      </div>
+      <div class="order-list" id="order-list"></div>
+    </div>
+  </section>
+  <aside>
+    <div class="panel track" id="track">
+      <div style="display:flex;gap:14px;align-items:center"><div id="t-img" style="width:56px;height:56px"></div><div><h3>Shipping</h3><div id="track-title" style="font-size:14px"></div></div></div>
+      <div class="map" aria-hidden="true"></div>
+      <div class="route" id="route"></div>
+      <ul class="timeline" id="timeline"></ul>
+      <div class="total"><span>Total cost:</span><span id="track-total"></span></div>
+      <button class="btn btn-dark btn-block" id="pay">Payment</button>
+    </div>
+    <div class="panel suggest-card"><b>You might also like ...</b><div id="suggest"></div></div>
+  </aside>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

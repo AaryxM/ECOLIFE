@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – EcoLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<div id="site-header"></div>
+<div class="page-hero"><h1>Contact us</h1><div class="crumbs">Home / Contact</div></div>
+<main class="container contact-layout">
+  <section class="contact-info">
+    <h2>We’re happy to help</h2>
+    <p class="lead">Questions about an order, a product or returns? Send a message and we’ll reply within 1–2 business days.</p>
+    <ul class="info-list">
+      <li><span class="ico">📞</span><div><b>Call us</b><a href="tel:+919876543210">+91-9876-543-210</a></div></li>
+      <li><span class="ico">✉️</span><div><b>Email</b><a href="mailto:info@ecostore.com">info@ecostore.com</a></div></li>
+      <li><span class="ico">📍</span><div><b>Visit</b><span>12 Green Lane, Bandra West<br>Mumbai, Maharashtra 400050</span></div></li>
+      <li><span class="ico">🕘</span><div><b>Support hours</b><span>Mon–Sat, 9:00 am – 6:00 pm IST</span></div></li>
+    </ul>
+    <div class="acc" id="faq">
+      <div class="acc-item"><button aria-expanded="false"><span>How long does delivery take?</span><span class="sign"></span></button><p>Orders ship in 1–2 business days and arrive in 3–5 business days. Shipping is free on orders of ₹3000 or more.</p></div>
+      <div class="acc-item"><button aria-expanded="false"><span>What is your returns policy?</span><span class="sign"></span></button><p>Returns are accepted within 10 days for unused items in their original packaging.</p></div>
+      <div class="acc-item"><button aria-expanded="false"><span>Where is my order?</span><span class="sign"></span></button><p>Open the Orders page and choose Track Order next to any shipped order.</p></div>
+    </div>
+  </section>
+  <section class="contact-form box">
+    <h2>Send a message</h2>
+    <form id="contact-form" novalidate>
+      <label class="field"><span class="i">👤</span><input name="name" placeholder="Your name" autocomplete="name"></label>
+      <label class="field"><span class="i">✉️</span><input name="email" type="email" placeholder="Email address" autocomplete="email"></label>
+      <label class="field"><span class="i">📦</span>
+        <select name="topic" aria-label="Topic"><option>Order help</option><option>Product question</option><option>Returns &amp; refunds</option><option>Wholesale</option><option>Something else</option></select></label>
+      <label class="field area"><textarea name="message" rows="6" placeholder="How can we help?"></textarea></label>
+      <div class="form-err" id="c-err" role="alert"></div>
+      <button class="btn btn-olive btn-block" type="submit">Send message</button>
+    </form>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

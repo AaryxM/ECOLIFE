@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In – EcoLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+<main class="auth"><div class="auth-stage">
+  <div class="auth-art" aria-hidden="true">🍶🧺🧼</div>
+  <div class="auth-card">
+    <a href="index.html" class="logo" aria-label="EcoLife home">ECO&#127807;L<i>i</i>FE</a>
+    <h1>Welcome</h1><p class="sub">Log In to continue your journey</p>
+    <form id="auth-form" novalidate>
+      <label class="field"><span class="i">✉️</span><input name="email" type="email" placeholder="Email Address" autocomplete="email"></label>
+      <label class="field"><span class="i">🔒</span><input name="password" type="password" placeholder="Password" autocomplete="current-password"></label>
+      <div class="row-between"><label><input type="checkbox" name="remember"> Remember Me</label><a href="#">Forgot Password?</a></div>
+      <div class="form-err" id="form-err" role="alert"></div>
+      <button class="btn btn-olive" type="submit">Log In →</button>
+    </form>
+    <p class="alt">Don’t have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+</div></main>
+<script src="js/main.js"></script>
+</body>
+</html>

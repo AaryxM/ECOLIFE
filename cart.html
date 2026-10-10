@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Cart – EcoLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cart">
+<div id="site-header"></div>
+<section class="sale-banner" id="sale-banner" aria-label="Spring sale"></section>
+<main class="container cart-layout">
+  <section>
+    <h1>Your Cart</h1>
+    <p id="cart-sub" style="color:var(--muted);margin-bottom:18px"></p>
+    <div id="cart-items"></div>
+    <a href="shop.html" style="color:var(--green-700);font-weight:500">← Continue Shopping</a>
+  </section>
+  <aside>
+    <div class="box"><h3>Have a promo code?</h3>
+      <div class="promo-row"><input id="promo" placeholder="Enter code (try ECOSTORE10)" aria-label="Promo code"><button class="btn btn-yellow btn-sm" id="apply">Apply</button></div>
+      <p class="msg" id="promo-msg"></p></div>
+    <div class="box"><h3 style="font-size:20px">Order Summary</h3><div id="summary"></div>
+      <button class="btn btn-lime btn-block" id="checkout" style="font-size:17px">Proceed to Checkout</button>
+      <div style="display:flex;justify-content:center;gap:26px;margin-top:20px;font-size:12px;color:var(--muted)"><span>🛡️ Secure</span><span>🚚 Free Shipping</span><span>↩️ Easy Returns</span></div></div>
+    <div class="box" id="recent-order" hidden></div>
+  </aside>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

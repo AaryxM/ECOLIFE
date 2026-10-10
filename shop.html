@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop – EcoLife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="shop">
+<div id="site-header"></div>
+<div class="page-hero"><h1>Shop</h1><div class="crumbs">Home / Shop</div></div>
+<main class="container shop-layout">
+  <aside class="filters" aria-label="Filters">
+    <h4 style="font-size:18px;margin:0">Filters</h4>
+    <div class="group" style="padding-top:2px;border:0"><h4>Categories</h4><div id="f-cats"></div></div>
+    <div class="group"><h4>Price range</h4>
+      <input type="range" id="range" class="range" min="0" max="2000" value="2000" aria-label="Maximum price">
+      <div class="price-inputs"><input id="pmin" type="number" min="0" placeholder="₹0" aria-label="Minimum price"><input id="pmax" type="number" max="2000" placeholder="₹2,000" aria-label="Maximum price"></div></div>
+    <div class="group"><h4>Material</h4><div id="f-mats"></div></div>
+    <div class="group"><h4>Shop by values</h4><div id="f-vals"></div></div>
+    <div class="group"><h4>Availability</h4>
+      <label><input type="checkbox" id="f-stock"> In stock</label>
+      <label><input type="checkbox" id="f-sale"> On sale</label></div>
+    <div class="promo-box"><h5>Buy less.<br>Choose better.</h5><p>Useful things, thoughtfully made. Every small swap is a step in the right direction.</p></div>
+  </aside>
+  <section>
+    <div class="searchbar">🔍 <input id="q" type="search" placeholder="Search products…" aria-label="Search products"></div>
+    <div class="toolbar"><span id="showing"></span>
+      <label>Sort by: <select id="sort"><option value="default">Default</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name</option></select></label></div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+    <div class="pager" id="pager"></div>
+  </section>
+</main>
+<section class="perks"><div class="container">
+  <div class="perk"><div class="ico">🚚</div><div><b>Free Shipping</b><small>On orders above ₹3000</small></div></div>
+  <div class="perk"><div class="ico">🛡️</div><div><b>Secure Payment</b><small>100% secure transactions</small></div></div>
+  <div class="perk"><div class="ico">↩️</div><div><b>Easy Returns</b><small>10-day hassle-free returns</small></div></div>
+</div></section>
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
