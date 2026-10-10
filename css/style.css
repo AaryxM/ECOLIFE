@@ -90,6 +90,13 @@ button{cursor:pointer;border:0}
 .bg-peach{background:#f6dfc6}.bg-cream{background:#f4f0e4}.bg-sage{background:#bdd098}.bg-sky{background:#c3e8f0}
 
 /* ---- Shop ---- */
+/* Shop page background */
+body[data-page="shop"] {
+  background: white; /* eco‑friendly light green */
+  /* Or use an image */
+  /* background: url("images/shop-bg.jpg") center/cover no-repeat; */
+}
+
 .page-hero{background:var(--cream);text-align:center;padding:26px 0 18px}
 .page-hero h1{font-size:40px}
 .crumbs{color:var(--muted);font-size:15px}
