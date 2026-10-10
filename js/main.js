@@ -1,5 +1,11 @@
 /* ===== EcoLife – shared JS: data, header/footer, cart, page logic ===== */
 
+/* ---------- Login gate: every page except login/signup needs a logged-in user ---------- */
+const AUTH_PAGES = ['login','signup'];
+const isLoggedIn = () => { try{ return !!JSON.parse(localStorage.getItem('ecolife_user')); }catch{ return false; } };
+const NEEDS_LOGIN = !AUTH_PAGES.includes(document.body.dataset.page) && !isLoggedIn();
+if(NEEDS_LOGIN) location.replace('login.html');   // demo only – real sites must check the session on the server
+
 /* ---------- Product data ----------
    Put your photos in /img and match the file names below (prices are indicative demo prices).
    If a file is missing, a coloured emoji placeholder is shown instead. */
@@ -56,6 +62,8 @@ const CATEGORIES = ['Home & Living','Kitchen','Bathroom & Care','Pets & Garden',
 
 /* ---------- Image file names (without extension) – rename here to match your /img folder ---------- */
 const IMG = {
+  logo:['ecolife-logo','eco-life-logo','logo','ecolife','eco-life'],
+  loginBg:['login-bg','login-background','login','login-screen','auth-bg'],
   hero:'hero', saleBanner:'sale-banner', kitchenTowel:'kitchen-towel', circularPlates:'circular-plates',
   shippingBanner:'shipping-banner', paperStraws:'paper-straws',
   bottlesTrio:['double-wall-bottle','bamboo-bottles','bottles'],
@@ -117,11 +125,12 @@ function renderChrome(){
     <a href="index.html" class="logo" aria-label="EcoLife home">ECO&#127807;L<i>i</i>FE</a>
     <ul id="nav-list">${link('index.html','Home','home')}${link('shop.html','Shop','shop')}${link('contact.html','Contact','contact')}${link('orders.html','Orders','orders')}</ul>
     <a href="cart.html" class="cart-link">${CART_SVG} Cart <span class="cart-count" id="cart-count" hidden>0</span></a>
+    <a href="login.html" class="cart-link" id="logout">Log out</a>
     <button class="menu-btn" aria-label="Menu" onclick="$('#nav-list').classList.toggle('open')">☰</button></div></header>`;
   const f = $('#site-footer');
   if(f) f.outerHTML = `<footer class="site-footer"><div class="container">
     <div class="foot-grid">
-      <div class="foot-brand"><div class="logo">🍃EcoStore</div><p>Better Goods, Lighter Footprint</p>
+      <div class="foot-brand"><a href="index.html" class="foot-logo" aria-label="EcoLife home">${smartImg(IMG.logo,'EcoLife',`<span class="logo">ECO&#127807;L<i>i</i>FE</span>`)}</a><p>Better Goods, Lighter Footprint</p>
         <div class="badges"><div><span>♻️</span>Plastic Free</div><div><span>🌍</span>Carbon Neutral</div><div><span>🌱</span>Sustainable</div></div></div>
       <div><h4>Quick Links</h4><ul><li><a href="shop.html">Shop All</a></li><li><a href="#">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="#">Blog</a></li></ul></div>
       <div><h4>Customer Service</h4><ul><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">FAQs</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms &amp; Conditions</a></li></ul></div>
@@ -132,6 +141,7 @@ function renderChrome(){
     </div></div></footer>`;
   $('#sub-form')?.addEventListener('submit', e=>{ e.preventDefault(); e.target.reset(); toast('Thanks for subscribing!'); });
   const sb=$('#sale-banner'); if(sb) sb.innerHTML = smartImg(IMG.saleBanner,'Spring sale', SALE_FALLBACK);
+  $('#logout')?.addEventListener('click', e=>{ e.preventDefault(); localStorage.removeItem('ecolife_user'); location.href='login.html'; });
   updateCartCount();
 }
 
@@ -503,6 +513,7 @@ function initOrders(){
    PAGES: LOGIN / SIGN UP (front-end demo only – no real auth)
    ========================================================= */
 function initAuth(kind){
+  $('.auth-stage')?.insertAdjacentHTML('afterbegin', `<div class="auth-bg">${smartImg(IMG.loginBg,'','')}</div>`);
   const form = $('#auth-form'), err = $('#form-err');
   form.addEventListener('submit', e=>{
     e.preventDefault(); err.textContent='';
@@ -541,6 +552,7 @@ function initContact(){
 
 /* ---------- Boot ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
+  if(NEEDS_LOGIN) return;
   renderChrome();
   const page = document.body.dataset.page;
   ({home:initHome, shop:initShop, product:initProduct, cart:initCart, orders:initOrders, contact:initContact,

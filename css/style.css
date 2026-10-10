@@ -382,5 +382,13 @@ button{cursor:pointer;border:0}
 
 /* shop cards – show the whole product instead of a cropped close-up */
 .card .imgbox{height:240px;background:#f1ebdb}
-.card .imgbox img{object-fit:contain;padding:5px}
+.card .imgbox img{object-fit:contain;padding:22px}
 .card .imgbox .ph{font-size:64px}
+
+.nav .cart-link#logout{margin-left:-20px;color:var(--muted);font-size:14px}
+@media (max-width:700px){.nav .cart-link#logout{margin-left:0}}
+
+/* login / signup background photo (img/login-bg.png) */
+.auth-bg{position:absolute;inset:0}
+.auth-bg img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.auth-stage:has(.auth-bg img) .auth-art{display:none}
