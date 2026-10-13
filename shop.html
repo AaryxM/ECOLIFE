@@ -6,14 +6,22 @@
 <title>Shop – EcoLife</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f4d2e">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EcoLife">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="shop">
 <div id="site-header"></div>
 <div class="page-hero"><h1>Shop</h1><div class="crumbs">Home / Shop</div></div>
 <main class="container shop-layout">
-  <aside class="filters" aria-label="Filters">
-    <h4 style="font-size:18px;margin:0">Filters</h4>
+  <aside class="filters" id="filters" aria-label="Filters">
+    <div class="filters-head"><h4 style="font-size:18px;margin:0">Filters</h4><button class="x" data-close-filters aria-label="Close filters">×</button></div>
     <div class="group" style="padding-top:2px;border:0"><h4>Categories</h4><div id="f-cats"></div></div>
     <div class="group"><h4>Price range</h4>
       <input type="range" id="range" class="range" min="0" max="2000" value="2000" aria-label="Maximum price">
@@ -23,9 +31,11 @@
     <div class="group"><h4>Availability</h4>
       <label><input type="checkbox" id="f-stock"> In stock</label>
       <label><input type="checkbox" id="f-sale"> On sale</label></div>
+    <button class="btn btn-olive btn-block filters-done" data-close-filters>Show results</button>
     <div class="promo-box"><h5>Buy less.<br>Choose better.</h5><p>Useful things, thoughtfully made. Every small swap is a step in the right direction.</p></div>
   </aside>
   <section>
+    <button class="btn btn-outline filter-toggle" id="filter-toggle" aria-controls="filters">☰ Filters</button>
     <div class="searchbar">🔍 <input id="q" type="search" placeholder="Search products…" aria-label="Search products"></div>
     <div class="toolbar"><span id="showing"></span>
       <label>Sort by: <select id="sort"><option value="default">Default</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name</option></select></label></div>
